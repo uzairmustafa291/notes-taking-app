@@ -2,9 +2,46 @@
 node_modules/
 .env
 .env.local
+.env.*.local
 dist/
 build/
 *.log
 .DS_Store
 .vscode/
 .idea/
+
+# Backend env files
+backend/.env
+backend/.env.local
+backend/.env.*.local
+backend/node_modules/
+backend/dist/
+
+# Frontend dist
+frontend/dist/
+frontend/node_modules/
+
+# Vercel
+.vercel/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Lock files (optional - customize based on your preference)
+# package-lock.json
+# yarn.lock
