@@ -1,15 +1,39 @@
 {
   "version": 2,
-  "buildCommand": "cd frontend && npm run build",
+  "buildCommand": "cd frontend && npm install && npm run build",
   "outputDirectory": "frontend/dist",
+  "public": "frontend/dist",
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api"
+      "source": "/api/health",
+      "destination": "/api/index.js"
     },
     {
-      "source": "/(.*)",
+      "source": "/api/auth/:path*",
+      "destination": "/api/index.js"
+    },
+    {
+      "source": "/api/notes/:path*",
+      "destination": "/api/index.js"
+    },
+    {
+      "source": "/:path*.html",
+      "destination": "/:path*.html"
+    },
+    {
+      "source": "/:path*",
       "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
+      ]
     }
   ],
   "env": {
@@ -20,7 +44,8 @@
   },
   "functions": {
     "api/index.js": {
-      "runtime": "nodejs18.x"
+      "runtime": "nodejs18.x",
+      "maxDuration": 30
     }
   }
 }
