@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+:root{
+  --bg-1: #0b1220; /* deep navy */
+  --bg-2: #061026; /* darker */
+  --card: rgba(255,255,255,0.06);
+  --glass: rgba(255,255,255,0.03);
+  --accent: #7c5cff; /* purple */
+  --accent-2: #00d4ff; /* cyan */
+  --muted: rgba(230,238,248,0.9);
+  --muted-2: rgba(230,238,248,0.65);
+  --success: #25c281;
+  --danger: #ff6b6b;
+  --radius: 12px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html,body,#root{height:100%}
+
+body{
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, 'Helvetica Neue', Arial;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(124,92,255,0.12), transparent 8%),
+              radial-gradient(1000px 400px at 90% 90%, rgba(0,212,255,0.06), transparent 6%),
+              linear-gradient(180deg,var(--bg-1),var(--bg-2));
+  color: #e6eef8;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  min-height:100vh;
+  transition: background 0.6s ease;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><circle cx="12" cy="12" r="6" fill="%23ffffff" fill-opacity="0.9"/></svg>') 12 12, auto;
+}
+
+.container{max-width:1200px;margin:0 auto;padding:20px}
+
+/* Navigation tweaks */
+.navbar{background:transparent;padding:1rem 0}
+.navbar .navbar-brand{color:var(--accent);font-weight:800;letter-spacing:0.4px}
+.navbar .text-white{opacity:0.95}
+
+/* Buttons */
+.btn{
+  border-radius:10px;
+  transition:transform .18s ease, box-shadow .18s ease, opacity .18s;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.45);
+  font-weight:600;
+}
+.btn:active{transform:translateY(1px)}
+.btn-primary{
+  background:linear-gradient(90deg,var(--accent),#4f9bff);
+  border:none;
+  color:#ffffff !important;
+}
+
+.btn-secondary {
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.12);
+  color:#ffffff !important;
+}
+
+.btn-secondary:hover {
+  background:rgba(255,255,255,0.12);
+  color:#ffffff !important;
+}
+
+.btn-danger {
+  background:#ff6b6b;
+  border:none;
+  color:#ffffff !important;
+}
+
+.btn-danger:hover {
+  background:#ff5252;
+  color:#ffffff !important;
+}
+
+.btn-outline-primary {
+  color:var(--accent) !important;
+  border-color:rgba(124,92,255,0.36) !important;
+}
+
+.btn-outline-primary:hover {
+  background:rgba(124,92,255,0.08);
+  color:#ffffff !important;
+}
+
+.btn-outline-secondary {
+  color:rgba(255,255,255,0.8) !important;
+  border-color:rgba(255,255,255,0.18) !important;
+}
+
+.btn-outline-secondary:hover {
+  background:rgba(255,255,255,0.08);
+  color:#ffffff !important;
+}
+
+/* Glass cards & modals */
+.card, .auth-card, .note-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px) saturate(120%);
+  border-radius: var(--radius);
+}
+
+/* Modal styling - BRIGHT TEXT */
+.modal-content{
+  background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.modal-header {
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.modal-title {
+  color:#ffffff !important;
+  font-weight:700;
+  font-size:1.25rem;
+}
+
+.modal-body {
+  color:#ffffff !important;
+  font-size:1rem;
+  line-height:1.6;
+}
+
+.modal-footer {
+  border-top:1px solid rgba(255,255,255,0.08);
+}
+
+.modal .btn-close {
+  filter:invert(1) brightness(1.1);
+}
+
+/* Modal form controls - inherit bright styling */
+.modal .form-control, .modal textarea, .modal input {
+  color:#ffffff !important;
+  background:rgba(255,255,255,0.08) !important;
+  border:2px solid rgba(255,255,255,0.16) !important;
+}
+
+.modal .form-control::placeholder, .modal textarea::placeholder, .modal input::placeholder {
+  color:rgba(255,255,255,0.72) !important;
+}
+
+.modal .form-label, .modal label {
+  color:#ffffff !important;
+  font-weight:600;
+}
+
+/* Form controls - HIGHLY VISIBLE TEXT INPUT */
+.form-control{
+  background:rgba(255,255,255,0.08) !important;
+  border:2px solid rgba(255,255,255,0.16) !important;
+  color:#ffffff !important;
+  padding:.7rem .85rem;
+  font-weight:500;
+  font-size:1rem;
+  caret-color:#ffffff;
+}
+.form-control:hover{
+  background:rgba(255,255,255,0.1) !important;
+  border-color:rgba(255,255,255,0.28) !important;
+}
+.form-control:focus{
+  background:rgba(255,255,255,0.12) !important;
+  box-shadow:0 12px 36px rgba(124,92,255,0.22) !important;
+  border-color:rgba(124,92,255,0.99) !important;
+  outline:none !important;
+  color:#ffffff !important;
+}
+
+/* All text input types */
+input[type="text"],input[type="email"],input[type="password"],textarea{
+  color:#ffffff !important;
+  background:rgba(255,255,255,0.08) !important;
+  caret-color:#ffffff !important;
+  border:2px solid rgba(255,255,255,0.16) !important;
+}
+input[type="text"]:focus,input[type="email"]:focus,input[type="password"]:focus,textarea:focus{
+  background:rgba(255,255,255,0.12) !important;
+  border-color:rgba(124,92,255,0.99) !important;
+}
+
+/* Placeholder text - MUST BE VISIBLE */
+.form-control::placeholder,textarea::placeholder,input::placeholder{
+  color:rgba(255,255,255,0.72) !important;
+  opacity:1 !important;
+}
+
+/* Labels */
+.form-label, label { color: #ffffff !important; font-weight:600; }
+.card, .card * { color: #e6eef8; }
+
+/* Buttons: stronger contrast and hover */
+.btn-primary{
+  color: #fff;
+}
+.btn-primary:hover{filter:brightness(1.05);transform:translateY(-1px)}
+
+/* Notes grid (used on Dashboard) */
+.notes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;align-items:start}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+
+/* Floating Add Button */
+.btn-lg{
+  padding:12px 28px;font-weight:700;border-radius:14px;
+}
+
+/* subtle entrance animation */
+@keyframes riseUp{from{opacity:0;transform:translateY(10px) scale(.995)}to{opacity:1;transform:translateY(0) scale(1)}}
+.fade-in{animation:riseUp .45s ease both}
+
+/* Utility */
+.text-muted{color:rgba(230,238,248,0.75)}
+
+/* Responsive tweaks */
+@media (max-width:768px){
+  .container{padding:12px}
+}
+

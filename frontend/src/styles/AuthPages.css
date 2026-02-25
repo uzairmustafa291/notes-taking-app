@@ -1,0 +1,75 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 100px);
+  padding: 20px;
+}
+
+.auth-wrapper {
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-card {
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px) saturate(120%);
+  transform-origin: center;
+  animation: riseUp .5s ease both;
+}
+
+.auth-card .card-body {
+  padding: 36px;
+}
+
+.auth-card h2 {
+  color: #e6eef8;
+  font-weight: 700;
+}
+
+.auth-card .form-label, .auth-card label {
+  color: rgba(230,238,248,0.95);
+}
+
+.auth-card .form-control, .auth-card textarea {
+  color: #ffffff !important;
+  background: rgba(255,255,255,0.08) !important;
+  border: 2px solid rgba(255,255,255,0.16) !important;
+  padding: .7rem .85rem;
+  font-weight:500;
+  font-size:1rem;
+}
+
+.auth-card .form-control::placeholder,
+.auth-card textarea::placeholder { 
+  color: rgba(255,255,255,0.72) !important;
+  opacity:1 !important;
+}
+
+.auth-card .form-control::placeholder { color: rgba(230,238,248,0.45); }
+
+.auth-card a {
+  color: var(--accent-2);
+  text-decoration: none;
+  font-weight:600;
+}
+
+.auth-card a:hover {
+  text-decoration: underline;
+  color: #9fefff;
+}
+
+.form-control:focus {
+  border-color: rgba(124,92,255,0.99) !important;
+  box-shadow: 0 12px 36px rgba(124,92,255,0.22) !important;
+  background:rgba(255,255,255,0.12) !important;
+  color:#ffffff !important;
+  outline:none !important;
+}
+
+/* Ensure primary action is highly visible */
+.auth-card .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;color:#fff}

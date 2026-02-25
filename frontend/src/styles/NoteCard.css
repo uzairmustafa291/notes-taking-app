@@ -1,0 +1,75 @@
+.note-card {
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.22s cubic-bezier(.2,.9,.2,1), box-shadow 0.22s;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.04);
+}
+
+.note-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 22px 60px rgba(2,6,23,0.65) !important;
+  z-index: 30;
+}
+
+.note-title {
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 10px;
+  word-break: break-word;
+  font-size:1.02rem;
+}
+
+.note-content {
+  color: rgba(230,238,248,0.9);
+  line-height: 1.5;
+  min-height: 48px;
+  max-height: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.note-meta {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(230,238,248,0.06);
+}
+
+.note-card .card-footer {
+  padding: 10px;
+}
+
+.note-card .btn-group {
+  gap: 5px;
+}
+
+.note-card .btn-group .btn {
+  padding: 5px 10px;
+  font-size: 0.875rem;
+}
+
+.note-card .card-body{padding:16px}
+.note-card .note-title{color:var(--muted);font-weight:700}
+.note-meta small{color:rgba(230,238,248,0.75)}
+
+/* gradient tag or accent bar */
+.note-card::before{
+  content:'';display:block;height:6px;border-top-left-radius:10px;border-top-right-radius:10px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+}
+
+/* make action buttons clearer */
+.note-card .btn{border-radius:8px;padding:.38rem .6rem}
+
+/* Footer: match app theme and keep it subtle */
+.note-footer{background:transparent;border-top:none;padding:10px 16px}
+.note-footer .btn{background:transparent}
+
+/* outline buttons inside notes: improve contrast */
+.note-card .btn-outline-primary{color:var(--accent);border-color:rgba(124,92,255,0.22)}
+.note-card .btn-outline-primary:hover{background:rgba(124,92,255,0.08);color:#fff;border-color:rgba(124,92,255,0.36)}
+.note-card .btn-outline-danger{color:var(--danger);border-color:rgba(255,107,107,0.22)}
+.note-card .btn-outline-danger:hover{background:rgba(255,107,107,0.06);color:#fff;border-color:rgba(255,107,107,0.36)}

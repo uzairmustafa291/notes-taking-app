@@ -1,0 +1,53 @@
+.dashboard-container {
+  min-height: 100vh;
+}
+
+.dashboard-container h1 {
+  color: #fff;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.btn-lg {
+  padding: 10px 30px;
+  font-weight: 500;
+}
+
+/* Floating add button style for prominence */
+.float-add {
+  position: fixed;
+  right: 24px;
+  bottom: 28px;
+  z-index: 1050;
+  padding: 14px 20px;
+  font-size: 1.05rem;
+  border-radius: 14px;
+  box-shadow: 0 12px 36px rgba(2,6,23,0.6);
+}
+
+/* Notes grid wrapper (applies responsive columns) */
+.notes-list-wrapper{width:100%;margin-top:12px}
+.notes-grid{width:100%}
+
+@media (max-width: 768px){
+  .float-add{right:16px;bottom:18px;padding:10px 14px}
+  .dashboard-header{flex-direction:column;align-items:flex-start;gap:10px}
+}
+
+/* Ensure bootstrap rows align items to top so cards don't overlap */
+.dashboard-container .row{align-items:start}
+
+.note-col{display:flex}
+.note-col > .note-card{flex:1}
+
+.dashboard-header{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px
+}
+
+.empty-state{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));
+  border:1px solid rgba(255,255,255,0.03);
+  padding:28px;border-radius:12px;box-shadow:0 8px 24px rgba(2,6,23,0.4)
+}
+
+.empty-state h4, .empty-state p { color: rgba(230,238,248,0.95); }
