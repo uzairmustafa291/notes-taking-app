@@ -1,6 +1,10 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api';
+// Determine API URL based on environment
+const isDevelopment = import.meta.env.DEV;
+const API_URL = isDevelopment 
+  ? 'http://localhost:5000/api'
+  : `${window.location.origin}/api`;
 
 // Create axios instance
 const api = axios.create({
